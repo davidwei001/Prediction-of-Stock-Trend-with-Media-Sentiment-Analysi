@@ -1,0 +1,403 @@
+<!DOCTYPE HTML>
+<!--
+	Prologue by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html> 
+	<head>
+		<title>Prediction of Stock Trend with Media Sentiment Analysis #0</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+    	<link href="build/nv.d3.css" rel="stylesheet" type="text/css">
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js" charset="utf-8"></script>
+    	<script src="build/nv.d3.js"></script>
+	</head>
+	<body>
+
+		<!-- Header -->
+			<div id="header">
+
+				<div class="top">
+
+					<!-- Logo -->
+						<div id="logo">
+							<!-- <span class="image avatar48"><img src="images/avatar.jpg" alt="" /></span> -->
+							<h1 id="title">Prediction of Stock Trend with Media Sentiment Analysis</h1>
+							<p>Columbia University <br>
+								E6893 Big Data Analytics<br>
+								Project:201812-30
+							</p>
+						</div>
+
+					<!-- Nav -->
+						<nav id="nav">
+							<!--
+
+								Prologue's nav expects links in one of two formats:
+
+								1. Hash link (scrolls to a different section within the page)
+
+								   <li><a href="#foobar" id="foobar-link" class="icon fa-whatever-icon-you-want skel-layers-ignoreHref"><span class="label">Foobar</span></a></li>
+
+								2. Standard link (sends the user to another page/site)
+
+								   <li><a href="http://foobar.tld" id="foobar-link" class="icon fa-whatever-icon-you-want"><span class="label">Foobar</span></a></li>
+
+							-->
+							<ul>
+								<li><a href="#top" id="top-link" class="skel-layers-ignoreHref"><span class="icon fa-home">Abstract</span></a></li>
+								<li><a href="#Background" id="Background-link" class="skel-layers-ignoreHref"><span class="icon fa-th">Background</span></a></li>
+								<li><a href="#overview" id="overview-link" class="skel-layers-ignoreHref"><span class="icon fa-th">Overview</span></a></li>
+								<li><a href="#results" id="results-link" class="skel-layers-ignoreHref"><span class="icon fa-th">Results</span></a></li>
+								<li><a href="#references" id="references-link" class="skel-layers-ignoreHref"><span class="icon fa-th">References</span></a></li>
+								<li><a href="#team" id="team-link" class="skel-layers-ignoreHref"><span class="icon fa-user">Our Team</span></a></li>
+								<li><a href="#contact" id="contact-link" class="skel-layers-ignoreHref"><span class="icon fa-envelope">Contact</span></a></li>
+							</ul>
+						</nav>
+
+				</div>
+
+				<div class="bottom">
+
+					<!-- Social Icons -->
+						<ul class="icons">
+							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
+							<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
+							<li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+
+				</div>
+
+			</div>
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- Intro -->
+					<section id="top" class="one dark cover">
+						<div class="container">
+
+								<iframe width="560" height="315" src="https://www.youtube.com/embed/Xsd5Nnp8w5U" frameborder="0" allowfullscreen></iframe>
+	
+								<h2 class="alt">Prediction of Stock Trend with Media Sentiment Analysis</h2>
+								<p>Qinyuan Wei (qw2264)  Long Jiao (lj2463)  Jiliang Ma (jm3592)</p>
+								
+
+							<footer>
+								<a href="#background" class="button scrolly">Let's start!</a>
+							</footer>
+
+						</div>
+					</section>
+
+				<!-- Portfolio -->
+					<section id="background" class="two">
+						<div class="container">
+
+							<header>
+								<h2>Background</h2>
+							</header>
+
+							<p align="left">
+							· A company’s stock price reflects public confidence in future development of that company.
+							<br>
+							· Using big data analytics, we aim to extract public sentiment from social media and article columns.
+							<br>
+							· Then we can explore the specific relationship between public sentiment and stock price. Also, we can make predictions of a company’s stock price based on this relationship.
+							<br>
+							</p>
+
+
+
+						</div>
+					</section>
+					
+					
+					<section id="overview" class="three">
+						<div class="container">
+
+							<header>
+								<h2>Overview</h2>
+							</header>
+							
+							<h3 align="left">Architecture</h3>
+
+							<a href="#" class="image fit"><img src="images\overview.png" alt="" /></a>
+							<br>
+							<h3 align="left">Technologies Used</h3>
+
+							<p align="left">
+							<font size="3" face="arial" color="black">
+							Hadoop, Spark, Jupyter Notebook, sklearn(MLP, Random Forest, Linear Regression), D3, Node Js
+							</font>
+							</p>
+
+							
+							<h3 align="left">Dataset</h3>
+
+							<p align="left" style="text-indent:-2em;padding:2em">
+							<font size="4" face="arial" color="black">
+							Historical stock price dataset:
+							<br>
+							</font>
+							
+							<font size="3" face="arial" color="black">
+							Microsoft,Nasdaq (Yahoo Finance)
+							</font>
+							</p>
+
+							<p align="left" style="text-indent:-2em;padding:2em">
+							<font size="4" face="arial" color="black">
+							Twitter7​ ​dataset​:
+							<br>
+							</font>
+							
+							<font size="3" face="arial" color="black">
+							25GB​ ​
+							<br>
+							between​ ​June​ ​to​ ​December​ ​in​ ​2009
+							<br>
+							476​ ​million tweets​ ​collected
+							</font>
+							</p>
+							
+							<h3 align="left">Algorithm</h3>
+
+							<p align="left">
+							<font size="3" face="arial" color="black">
+							Linear Regression, Random Forest and MLP
+							</font>
+							</p>
+							
+							
+						</div>
+					</section>
+					
+					
+					<section id="results" class="two">
+						<div class="container">
+
+							<header>
+								<h2>Results</h2>
+							</header>
+							
+							<h3 align="left">Data visual</h3>
+
+
+
+							<div class="4u 12u$(mobile)">
+									<article class="item">
+										<a href="#" class="image fit"><img src="images/tweetcloud12.png" alt="" /></a>
+										<header>
+											<h3>Word Cloud for December</h3>
+										</header>
+									</article>
+							</div>
+
+							
+					        <div class="4u 12u$(mobile)">
+						            <a href="candlestickChart.html">
+						            	<header>
+											<h3 align="left">CandlestickChart</h3>
+										</header>
+						    		</a> 
+					        </div>
+
+					        <div id="show_wrapper"><iframe id="show"></iframe></div>
+
+
+					        <div class="4u 12u$(mobile)">
+						            <a href="forceDirected.html">
+						            	<header>
+											<h3 align="left">Most Similiar Words</h3>
+										</header>
+						    		</a> 
+					        </div>
+
+					        <div id="show_wrapper"><iframe id="show"></iframe></div>
+
+
+
+							<h3 align="left">Test Result</h3>
+							
+							<div class="row">
+								<div class="4u 12u$(mobile)">
+									<article class="item">
+										<a href="#" class="image fit"><img src="images/LR.png" alt="" /></a>
+										<header>
+											<h3>Linear Regression</h3>
+										</header>
+									</article>
+								</div>
+								<div class="4u 12u$(mobile)">
+									<article class="item">
+										<a href="#" class="image fit"><img src="images/RF.png" alt="" /></a>
+										<header>
+											<h3>Random Forest</h3>
+										</header>
+									</article>
+								</div>
+								<div class="4u$ 12u$(mobile)">
+									<article class="item">
+										<a href="#" class="image fit"><img src="images/MLP.png" alt="" /></a>
+										<header>
+											<h3>MLP</h3>
+										</header>
+									</article>
+								</div>
+							</div>
+
+							<h3 align="left">Result Evaluation</h3>
+
+
+							<div class="4u 12u$(mobile)">
+									<article class="item">
+										<a href="#" class="image fit"><img src="images/Evaluation.png" alt="" /></a>
+										<header>
+											<h3>MSE and RMSE for the three algrithms</h3>
+										</header>
+									</article>
+							</div>
+
+							
+							
+						</div>
+					</section>
+					
+					<section id="references" class="three">
+						<div class="container">
+
+							<header>
+								<h2>References</h2>
+							</header>
+
+							<p align="left">
+							1. 476 Million Twitter Tweets, J. Yang, J. Leskovec. Temporal Variation in Online Media . ACM International Conference on Web Search and Data Mining (WSDM '11), 2011. 
+							<br>
+							<a href="https://snap.stanford.edu/data/twitter7.html" target="_blank">
+							https://snap.stanford.edu/data/twitter7.html</a>
+							<br>	
+							2. Skuza, Micheal. Romanowski, Andrzej.(2015). Sentiment Analysis of Twitter Data within Big Data Distributed Environment for Stock Prediction DOI: 10.15439/2015F230 
+							<br>
+							<a href="http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=7321604&tag=1" target="_blank">http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=7321604&tag=1</a>
+							<br>
+							3. Pagolu, S.Venkata. Reddy, N.Kamal. Panda, Ganapati (2016). Sentiment analysis of Twitter data for predicting stock market movements DOI: 10.1109/SCOPES.2016.7955659 
+							<br>
+							<a href="http://ieeexplore.ieee.org/document/7955659/?part=1" target="_blank">
+							http://ieeexplore.ieee.org/document/7955659/?part=1</a>
+							</p>
+
+						</div>
+					</section>
+					
+
+				<!-- About Me -->
+					<section id="team" class="two">
+						<div class="container">
+
+							<header>
+								<h2>Our Team</h2>
+							</header>
+
+							<!-- <a href="#" class="image featured"><img src="images/pic08.jpg" alt="" /></a> -->
+
+
+							<div class="row">
+								<div class="4u 12u$(mobile)">
+									<article class="item">
+										<a href="#" class="image fit"><img src="images/pic.png" alt="" /></a>
+										<header>
+											<h3>Long Jiao</h3>
+											<p>lj2463</p>
+										</header>
+									</article>
+								</div>
+								<div class="4u 12u$(mobile)">
+									<article class="item">
+										<a href="#" class="image fit"><img src="images/pic.png" alt="" /></a>
+										<header>
+											<h3>Jiliang Ma</h3>
+											<p>jm4750</p>
+										</header>
+									</article>
+								</div>
+								<div class="4u$ 12u$(mobile)">
+									<article class="item">
+										<a href="#" class="image fit"><img src="images/pic.png" alt="" /></a>
+										<header>
+											<h3>Qinyuan Wei</h3>
+											<p>qw2264</p>
+										</header>
+									</article>
+								</div>
+							</div>
+
+						</div>
+					</section>
+
+				<!-- Contact -->
+					<section id="contact" class="four">
+						<div class="container">
+
+							<header>
+								<h2>Contact</h2>
+							</header>
+
+							<p align="left">
+								<strong>Long Jiao: </strong>lj2463@columbia.edu</br>
+								<strong>Jiliang Ma: </strong>jm4750@columbia.edu</br>
+								<strong>Qinyuan Wei: </strong>qw2264@columbia.edu</br>
+							</br>
+								<strong>Columbia University </strong><a href="http://www.ee.columbia.edu">Department of Electrical Engineering</a><br>
+								<!-- <strong>Class Website:</strong>
+									<a href="https://edblogs.columbia.edu/eecs4764-001-2018-3/">Columbia University EECS E4764 Fall '18 IoT</a></br> -->
+								<strong>Instructor:</strong> <a href="https://www.ee.columbia.edu/ching-yung-lin">Professsor Ching-Yung Lin</a>
+							</p>
+							
+
+							<!-- <form method="post" action="#">
+								<div class="row">
+									<div class="6u 12u$(mobile)"><input type="text" name="name" placeholder="Name" /></div>
+									<div class="6u$ 12u$(mobile)"><input type="text" name="email" placeholder="Email" /></div>
+									<div class="12u$">
+										<textarea name="message" placeholder="Message"></textarea>
+									</div>
+									<div class="12u$">
+										<input type="submit" value="Send Message" />
+									</div>
+								</div>
+							</form> -->
+
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<div id="footer">
+
+				<!-- Copyright -->
+					<ul class="copyright">
+						<li>&copy; IoT Project | All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollzer.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

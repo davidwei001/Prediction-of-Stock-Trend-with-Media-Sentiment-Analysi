@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link href="build/nv.d3.css" rel="stylesheet" type="text/css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js" charset="utf-8"></script>
+    <script src="build/nv.d3.js"></script>
+
+    <style>
+        text {
+            font: 12px sans-serif;
+        }
+        svg {
+            display: block;
+        }
+        html, body, svg {
+            margin: 0px;
+            padding: 0px;
+            height: 100%;
+            width: 100%;
+        }
+
+    </style>
+</head>
+<body>
+
+<svg id="test1"></svg>
+
+<script>
+    // Example based on http://bl.ocks.org/mbostock/4062045
+    nv.addGraph({
+        generate: function() {
+            var width = nv.utils.windowSize().width - 40,
+                height = nv.utils.windowSize().height - 40;
+
+            var d3Colors = d3.scale.category20();
+            var chart = nv.models.forceDirectedGraph()
+                .width(width)
+                .height(height)
+                .margin({top: 20, right: 20, bottom: 20, left: 20})
+                .color(function(d) { return d3Colors(d.group) })
+                .nodeExtras(function(node) {
+                  node
+                    .append("text")
+                    .attr("dx", 12)
+                    .attr("dy", ".35em")
+                    .text(function(d) { return d.name });
+                });
+
+            chart.dispatch.on('renderEnd', function(){
+                console.log('render complete');
+            });
+
+
+            d3.select('#test1')
+              .attr('width', width)
+              .attr('height', height)
+              .datum(all_data)  // all_data is set below
+              .call(chart);
+
+            return chart;
+        },
+        callback: function(graph) {
+            window.onresize = function() {
+                var width = nv.utils.windowSize().width - 40,
+                    height = nv.utils.windowSize().height - 40,
+                    margin = graph.margin();
+
+                if (width < margin.left + margin.right + 20)
+                    width = margin.left + margin.right + 20;
+
+                if (height < margin.top + margin.bottom + 20)
+                    height = margin.top + margin.bottom + 20;
+
+                graph.width(width).height(height);
+
+                d3.select('#test1')
+                    .attr('width', width)
+                    .attr('height', height)
+                    .call(graph);
+            };
+        }
+    });
+</script>
+<script>
+var all_data = {
+    "nodes":[
+    // {"name":"Myriel","group":1},
+    // {"name":"Napoleon","group":1},
+    // {"name":"Mlle.Baptistine","group":1}
+  
+      {
+        "name":"Microsoft",
+        "group":"1"
+      },
+      {
+        "name":"xbox",
+        "group":"2"
+      },
+      {
+        "name": "Google",
+        "group": "1"
+      },
+      {
+        "name": "Windows",
+        "group": "1"
+      },
+      {
+        "name": "with",
+        "group": "1"
+      },
+      {
+        "name": "xbox",
+        "group": "1"
+      },
+      {
+        "name": "Maps",
+        "group": "1"
+      },
+      {
+        "name": "Silverlight",
+        "group": "1"
+      },
+      {
+        "name": "Microsofts",
+        "group": "1"
+      },
+      {
+        "name": "Office",
+        "group": "1"
+      },
+      {
+        "name": "kauft",
+        "group": "1"
+      },
+      {
+        "name": "their",
+        "group": "1"
+      },
+      {
+        "name": "that",
+        "group": "1"
+      },
+      {
+        "name": "Black",
+        "group": "1"
+      },
+      {
+        "name": "Corp",
+        "group": "1"
+      },
+      {
+        "name": "Security",
+        "group": "1"
+      },
+      {
+        "name": "photo",
+        "group": "1"
+      },
+      {
+        "name": "Phone",
+        "group": "1"
+      },
+      {
+        "name": "Dynamics",
+        "group": "1"
+      },
+      {
+        "name": "search",
+        "group": "1"
+      },
+      {
+        "name": "July",
+        "group": "1"
+      },
+      {
+        "name": "online",
+        "group": "1"
+      },
+      {
+        "name": "Beta",
+        "group": "1"
+      },
+      {
+        "name": "Screen",
+        "group": "1"
+      },
+      {
+        "name": "screen",
+        "group": "1"
+      },
+      {
+        "name": "COFEE",
+        "group": "1"
+      },
+      {
+        "name": "users",
+        "group": "1"
+      },
+
+
+    
+  {
+    "name": "Google",
+    "group": "2"
+  },
+  {
+    "name": "Microsofts",
+    "group": "2"
+  },
+  {
+    "name": "with",
+    "group": "2"
+  },
+  {
+    "name": "Bing",
+    "group": "2"
+  },
+  {
+    "name": "Windows",
+    "group": "2"
+  },
+  {
+    "name": "kauft",
+    "group": "2"
+  },
+  {
+    "name": "Office",
+    "group": "2"
+  },
+  {
+    "name": "that",
+    "group": "2"
+  },
+  {
+    "name": "Corp",
+    "group": "2"
+  },
+  {
+    "name": "photo",
+    "group": "2"
+  },
+  {
+    "name": "Security",
+    "group": "2"
+  },
+  {
+    "name": "their",
+    "group": "2"
+  },
+  {
+    "name": "Phone",
+    "group": "2"
+  },
+  {
+    "name": "search",
+    "group": "2"
+  },
+  {
+    "name": "Maps",
+    "group": "2"
+  },
+  {
+    "name": "COFEE",
+    "group": "2"
+  },
+  {
+    "name": "July",
+    "group": "2"
+  },
+  {
+    "name": "computing",
+    "group": "2"
+  },
+  {
+    "name": "Silverlight",
+    "group": "2"
+  },
+  {
+    "name": "Black",
+    "group": "2"
+  },
+  {
+    "name": "Wien",
+    "group": "2"
+  },
+  {
+    "name": "screen",
+    "group": "2"
+  },
+  {
+    "name": "online",
+    "group": "2"
+  },
+  {
+    "name": "Dynamics",
+    "group": "2"
+  },
+  {
+    "name": "users",
+    "group": "2"
+  },
+  {
+    "name": "xboxer",
+    "group": "2"
+  },
+  {
+    "name": "Stadt",
+    "group": "2"
+  }
+
+
+
+
+],
+        "links":[
+    
+
+  
+  {
+    "source": 1.0,
+    "target": 0.0,
+    "value": 1.0
+  },
+  {
+    "source": 2.0,
+    "target": 0.0,
+    "value": 1.0
+  },
+  {
+    "source": 3.0,
+    "target": 0.0,
+    "value": 1.0
+  },
+  {
+    "source": 4.0,
+    "target": 0.0,
+    "value": 1.0
+  },
+  {
+    "source": 5.0,
+    "target": 0.0,
+    "value": 1.0
+  },
+  {
+    "source": 6.0,
+    "target": 0.0,
+    "value": 1.0
+  },
+  {
+    "source": 7.0,
+    "target": 0.0,
+    "value": 1.0
+  },
+  {
+    "source": 8.0,
+    "target": 0.0,
+    "value": 1.0
+  },
+  {
+    "source": 9.0,
+    "target": 0.0,
+    "value": 1.0
+  },
+  {
+    "source": 10.0,
+    "target": 0.0,
+    "value": 1.0
+  },
+  {
+    "source": 11.0,
+    "target": 0.0,
+    "value": 1.0
+  },
+  {
+    "source": 12.0,
+    "target": 0.0,
+    "value": 1.0
+  },
+  {
+    "source": 13.0,
+    "target": 0.0,
+    "value": 1.0
+  },
+  {
+    "source": 14.0,
+    "target": 0.0,
+    "value": 1.0
+  },
+  {
+    "source": 15.0,
+    "target": 0.0,
+    "value": 1.0
+  },
+  {
+    "source": 16.0,
+    "target": 0.0,
+    "value": 1.0
+  },
+  {
+    "source": 17.0,
+    "target": 0.0,
+    "value": 1.0
+  },
+  {
+    "source": 18.0,
+    "target": 0.0,
+    "value": 1.0
+  },
+  {
+    "source": 19.0,
+    "target": 0.0,
+    "value": 1.0
+  },
+  {
+    "source": 20.0,
+    "target": 0.0,
+    "value": 1.0
+  },
+  {
+    "source": 21.0,
+    "target": 0.0,
+    "value": 1.0
+  },
+  {
+    "source": 22.0,
+    "target": 0.0,
+    "value": 1.0
+  },
+  {
+    "source": 23.0,
+    "target": 0.0,
+    "value": 1.0
+  },
+  {
+    "source": 24.0,
+    "target": 0.0,
+    "value": 1.0
+  },
+  {
+    "source": 25.0,
+    "target": 0.0,
+    "value": 1.0
+  },
+  {
+    "source": 26.0,
+    "target": 1.0,
+    "value": 1.0
+  },
+  {
+    "source": 27.0,
+    "target": 1.0,
+    "value": 1.0
+  },
+  {
+    "source": 28.0,
+    "target": 1.0,
+    "value": 1.0
+  },
+  {
+    "source": 29.0,
+    "target": 1.0,
+    "value": 1.0
+  },
+  {
+    "source": 30.0,
+    "target": 1.0,
+    "value": 1.0
+  },
+  {
+    "source": 31.0,
+    "target": 1.0,
+    "value": 1.0
+  },
+  {
+    "source": 32.0,
+    "target": 1.0,
+    "value": 1.0
+  },
+  {
+    "source": 33.0,
+    "target": 1.0,
+    "value": 1.0
+  },
+  {
+    "source": 34.0,
+    "target": 1.0,
+    "value": 1.0
+  },
+  {
+    "source": 35.0,
+    "target": 1.0,
+    "value": 1.0
+  },
+  {
+    "source": 36.0,
+    "target": 1.0,
+    "value": 1.0
+  },
+  {
+    "source": 37.0,
+    "target": 1.0,
+    "value": 1.0
+  },
+  {
+    "source": 38.0,
+    "target": 1.0,
+    "value": 1.0
+  },
+  {
+    "source": 39.0,
+    "target": 1.0,
+    "value": 1.0
+  },
+  {
+    "source": 40.0,
+    "target": 1.0,
+    "value": 1.0
+  },
+  {
+    "source": 41.0,
+    "target": 1.0,
+    "value": 1.0
+  },
+  {
+    "source": 42.0,
+    "target": 1.0,
+    "value": 1.0
+  },
+  {
+    "source": 43.0,
+    "target": 1.0,
+    "value": 1.0
+  },
+  {
+    "source": 44.0,
+    "target": 1.0,
+    "value": 1.0
+  },
+  {
+    "source": 45.0,
+    "target": 1.0,
+    "value": 1.0
+  },
+  {
+    "source": 46.0,
+    "target": 1.0,
+    "value": 1.0
+  },
+  {
+    "source": 47.0,
+    "target": 1.0,
+    "value": 1.0
+  },
+  {
+    "source": 48.0,
+    "target": 1.0,
+    "value": 1.0
+  },
+  {
+    "source": 49.0,
+    "target": 1.0,
+    "value": 1.0
+  },
+  {
+    "source": 50.0,
+    "target": 1.0,
+    "value": 1.0
+  }
+
+
+
+    
+]
+}
+</script>
+
+
+</body>
+</html>
